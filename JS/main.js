@@ -35,19 +35,19 @@ let placesInfo = [
     name: "Thailand",
     description:
       "Thailand is a country of natural magic, a country of beauty, golden sands and blue waters.",
-    image: "IMGS/thiyland.jpg",
+    image: "IMGS/thiyland.webp",
   },
   {
     name: "Egypt",
     description:
       "Pack your bags and head to Egypt, where the pharaohs and ancient ancient buildings are.",
-    image: "IMGS/egypt.jpg",
+    image: "IMGS/egypt.webp",
   },
   {
     name: "Maldives",
     description:
       "Rest your eyes on the natural beauty of the Maldives amid the sand, seas and blue waters.",
-    image: "IMGS/maldives.jpg",
+    image: "IMGS/maldives.webp",
   },
   {
     name: "Italy",

@@ -1,7 +1,6 @@
 let allLinks = document.querySelectorAll(".mainlinks li  a");
 let btn = document.querySelector("nav .btn");
 let navLinks = document.querySelector("nav .navlinks");
-console.log(navLinks);
 allLinks.forEach((link) => {
   link.addEventListener("click", function () {
     document.querySelector(".active")?.classList.remove("active");
@@ -29,7 +28,7 @@ let placesInfo = [
     name: "Indonesia",
     description:
       "Travel to Indonesia and enjoy the islands, nature, seas and mountains.",
-    image: "IMGS/indon.jpg",
+    image: "IMGS/indon.webp",
   },
   {
     name: "Thailand",
@@ -53,7 +52,7 @@ let placesInfo = [
     name: "Italy",
     description:
       "Here there is beauty and romance, in Italy on the mountains magic is born, just come to that charming city.",
-    image: "IMGS/italy.jpg",
+    image: "IMGS/italy.webp",
   },
 ];
 
@@ -72,11 +71,6 @@ placesInfo.forEach((value) => {
   info.appendChild(name);
   info.appendChild(desc);
   item.appendChild(info);
-  let a = document.createElement("a");
-  let aText = document.createTextNode("See More");
-  a.appendChild(aText);
-  a.href = "#";
-  // info.appendChild(a);
   let overlay = document.createElement("div");
   overlay.className = "overlay";
   item.appendChild(overlay);

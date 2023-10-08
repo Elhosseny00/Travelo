@@ -88,3 +88,126 @@ document.querySelector(".prev").onclick = function () {
   let lists = document.querySelectorAll(".item");
   document.querySelector(".slide").prepend(lists[lists.length - 1]);
 };
+
+let Places = [
+  {
+    id: 1,
+    title: "Maldives",
+    image: "../IMGS/maldives-1.webp",
+    price: 800,
+  },
+  {
+    id: 2,
+    title: "Egypt",
+    image: "../IMGS/egypt-1.webp",
+    price: 450,
+  },
+  {
+    id: 3,
+    title: "Italy",
+    image: "../IMGS/italy-1.webp",
+    price: 350,
+  },
+  {
+    id: 4,
+    title: "Indonesia",
+    image: "../IMGS/indones-1.webp",
+    price: 600,
+  },
+  {
+    id: 5,
+    title: "Chian",
+    image: "../IMGS/china.webp",
+    price: 810,
+  },
+  {
+    id: 6,
+    title: "India",
+    image: "../IMGS/india.webp",
+    price: 530,
+  },
+  {
+    id: 7,
+    title: "Australia",
+    image: "../IMGS/australia.webp",
+    price: 920,
+  },
+  {
+    id: 8,
+    title: "France",
+    image: "../IMGS/france.webp",
+    price: 350,
+  },
+];
+let butns = document.querySelectorAll(".btn-slider");
+let sliderDiv = document.querySelector(".slider");
+let ulCards = document.createElement("ul");
+let body = document.querySelector("body");
+let firstCardWidth;
+
+function getPlaces() {
+  Places.forEach((value) => {
+    let licard = document.createElement("li");
+    licard.className = "card";
+    ulCards.className = "carousel";
+    ulCards.appendChild(licard);
+    licard.innerHTML = `
+    <div class='info'>
+    <div class="img-container">
+    <img src="IMGS/${value.image}" alt="${value.title}"/>
+    </div>
+      <div class="sub-info">
+      <div class="text">
+      <h3>${value.title}</h3>
+      <i onclick="changeIcon(this)"class="fa-regular fa-heart"></i>
+      </div>
+      <div class="main">
+      <span>$${value.price}</span>
+      <ul>
+      <li><i class="fa-solid fa-star"></i></li>
+      <li><i class="fa-solid fa-star"></i></li>
+      <li><i class="fa-solid fa-star"></i></li>
+      <li><i class="fa-solid fa-star"></i></li>
+      <li><i class="fa-solid fa-star"></i></li>
+      </ul>
+      </div>
+      <button class="bookit" aria-label="Book Now">Book Now</button>
+      </div>
+    </div>
+    `;
+    sliderDiv.appendChild(ulCards);
+    if (!firstCardWidth) {
+      firstCardWidth = licard.offsetWidth;
+    }
+  });
+}
+butns.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    ulCards.scrollLeft += btn.id === "left" ? -firstCardWidth : firstCardWidth;
+  });
+});
+getPlaces();
+function changeIcon(icon) {
+  if (icon.classList.contains("activeit")) {
+    icon.classList.remove("activeit");
+    icon.classList.remove("fas");
+    let popup = document.createElement("div");
+    popup.className = "popup-Message";
+    popup.innerText = "Removed From Favorites";
+    document.body.appendChild(popup);
+    setTimeout(() => {
+      document.body.removeChild(popup);
+    }, 2000);
+  } else {
+    icon.classList.add("activeit");
+    icon.classList.add("fas");
+    let popup = document.createElement("div");
+    popup.className = "popup-Message";
+    popup.innerText = "Added To Favorites";
+    document.body.appendChild(popup);
+
+    setTimeout(() => {
+      document.body.removeChild(popup);
+    }, 2000);
+  }
+}

@@ -211,3 +211,14 @@ function changeIcon(icon) {
     }, 2000);
   }
 }
+
+// Slice Func
+// let myString = "Mohamed Atef Mohamed Hosseny";
+// function sliceString(string, maxLength) {
+//   if (string.length <= maxLength) {
+//     console.log(string);
+//   } else {
+//     console.log(string.slice(0, maxLength - 3) + "...");
+//   }
+// }
+// sliceString(myString, 20);

@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&display=swap');
 
 
+
 body {
   font-family: 'Open Sans', sans-serif;
   background-color: var(--white-color);
@@ -212,6 +213,7 @@ h6 {
   -moz-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   -o-transform: translate(-50%, -50%);
+
 }
 
 
@@ -880,4 +882,48 @@ h6 {
   .palces .container .slider .carousel {
     grid-auto-columns: calc(100% / 1 - 40px);
   }
+}
+
+.services .container .cards {
+  margin: var(--margin);
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+
+.services .container .cards .card {
+  width: 100%;
+  text-align: center;
+  padding: 12px 8px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  border-radius: 12px;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  -ms-border-radius: 12px;
+  -o-border-radius: 12px;
+  position: relative;
+}
+
+.services .container .cards .card .number {
+  font-size: 70px;
+  font-weight: bold;
+  color: var(--blue-color);
+  z-index: -1;
+}
+
+.services .container .cards .card .text {
+  z-index: 1;
+  position: relative;
+  bottom: 28px;
+  background-color: var(--white-color);
+}
+
+.services .container .cards .card .text h3 {
+  color: var(--blue-color);
+  margin-bottom: 8px;
+}
+
+.services .container .cards .card .text p {
+  color: #666;
+  font-size: 14px;
 }

@@ -171,7 +171,7 @@ function getPlaces() {
       <li><i class="fa-solid fa-star"></i></li>
       </ul>
       </div>
-      <button class="bookit" aria-label="Book Now">Book Now</button>
+      <button onclick="popUp()" class="bookit" aria-label="Book Now">Book Now</button>
       </div>
     </div>
     `;
@@ -212,6 +212,33 @@ function changeIcon(icon) {
   }
 }
 
+function popUp() {
+  let bookingDiv = document.createElement("div");
+  bookingDiv.className = "popup-Div";
+  bookingDiv.innerText = "The Flight Has Been Booked Successfully";
+  document.body.appendChild(bookingDiv);
+  setTimeout(() => {
+    document.body.removeChild(bookingDiv);
+  }, 2000);
+}
+
+window.addEventListener("scroll", reveal);
+function reveal() {
+  let reveals = document.querySelectorAll(".reveal");
+  for (let i = 0; i < reveals.length; i++) {
+    let height = window.innerHeight;
+    let revealPoint = 100;
+    let revealTop = reveals[i].getBoundingClientRect().top;
+    if (revealTop < height - revealPoint) {
+      reveals[i].classList.add("showCard");
+    } else {
+      reveals[i].classList.remove("showCard");
+    }
+  }
+}
+let year = document.getElementById("year");
+let currentYear = new Date().getFullYear();
+year.innerHTML = currentYear;
 // Slice Func
 // let myString = "Mohamed Atef Mohamed Hosseny";
 // function sliceString(string, maxLength) {

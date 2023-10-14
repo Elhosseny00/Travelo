@@ -1492,6 +1492,7 @@ footer {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  padding: 12px;
 }
 
 footer .logo {
